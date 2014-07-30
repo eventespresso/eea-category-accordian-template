@@ -15,7 +15,7 @@
  *
  * ------------------------------------------------------------------------
  *
- * EES_Espresso_Calendar_Table_Template
+ * EES_Espresso_Category_Accordion_Template
  *
  * @package			Event Espresso
  * @subpackage		espresso-new-addon
@@ -24,7 +24,7 @@
  *
  * ------------------------------------------------------------------------
  */
-class EES_Espresso_Calendar_Table_Template  extends EES_Shortcode {
+class EES_Espresso_Category_Accordion_Template  extends EES_Shortcode {
 
 
 
@@ -85,19 +85,19 @@ class EES_Espresso_Calendar_Table_Template  extends EES_Shortcode {
 	 *  @return 	void
 	 */
 	public function enqueue_scripts() {
-		//Check to see if the calendar_table_template css file exists in the '/uploads/espresso/' directory
-		if ( is_readable( EVENT_ESPRESSO_UPLOAD_DIR . 'css' . DS . 'espresso_calendar_table_template.css' )) {
+		//Check to see if the category_accordion_template css file exists in the '/uploads/espresso/' directory
+		if ( is_readable( EVENT_ESPRESSO_UPLOAD_DIR . 'css' . DS . 'espresso_category_accordion_template.css' )) {
 			//This is the url to the css file if available
-			wp_register_style( 'espresso_calendar_table_template', EVENT_ESPRESSO_UPLOAD_URL . 'css' . DS . 'espresso_calendar_table_template.css' );
+			wp_register_style( 'espresso_category_accordion_template', EVENT_ESPRESSO_UPLOAD_URL . 'css' . DS . 'espresso_category_accordion_template.css' );
 		} else {
-			// EE calendar_table_template style
-			wp_register_style( 'espresso_calendar_table_template', EE_CALENDAR_TABLE_TEMPLATE_URL . 'css' . DS . 'espresso_calendar_table_template.css' );
+			// EE category_accordion_template style
+			wp_register_style( 'espresso_category_accordion_template', EE_CATEGORY_ACCORDION_TEMPLATE_URL . 'css' . DS . 'espresso_category_accordion_template.css' );
 		}
-		// calendar_table_template script
-		wp_register_script( 'espresso_calendar_table_template', EE_CALENDAR_TABLE_TEMPLATE_URL . 'scripts' . DS . 'espresso_calendar_table_template.js', array( 'jquery' ), EE_CALENDAR_TABLE_TEMPLATE_VERSION, TRUE );
+		// category_accordion_template script
+		wp_register_script( 'espresso_category_accordion_template', EE_CATEGORY_ACCORDION_TEMPLATE_URL . 'scripts' . DS . 'espresso_category_accordion_template.js', array( 'jquery' ), EE_CATEGORY_ACCORDION_TEMPLATE_VERSION, TRUE );
 		// enqueue
-		wp_enqueue_style( 'espresso_calendar_table_template' );
-		wp_enqueue_script( 'espresso_calendar_table_template' );
+		wp_enqueue_style( 'espresso_category_accordion_template' );
+		wp_enqueue_script( 'espresso_category_accordion_template' );
 	}
 
 
@@ -105,7 +105,7 @@ class EES_Espresso_Calendar_Table_Template  extends EES_Shortcode {
 	/**
 	 *    process_shortcode
 	 *
-	 *    [ESPRESSO_CALENDAR_TABLE_TEMPLATE]
+	 *    [ESPRESSO_CATEGORY_ACCORDION_TEMPLATE]
 	 *
 	 * @access 	public
 	 * @param 	array $attributes
@@ -131,16 +131,16 @@ class EES_Espresso_Calendar_Table_Template  extends EES_Shortcode {
 		);
 		// run the query
 		global $wp_query;
-		$wp_query = new EE_Calendar_Table_Template_Query( $attributes );
+		$wp_query = new EE_Category_Accordion_Template_Query( $attributes );
 //		d( $wp_query );
 		// now filter the array of locations to search for templates
 		add_filter( 'FHEE__EEH_Template__locate_template__template_folder_paths', array( $this, 'template_folder_paths' ));
 		// load our template
-		$calendar_table_template = EEH_Template::locate_template( 'espresso-calendar-table-template.template.php', $attributes );
+		$category_accordion_template = EEH_Template::locate_template( 'espresso-calendar-table-template.template.php', $attributes );
 		// now reset the query and postdata
 		wp_reset_query();
 		wp_reset_postdata();
-		return $calendar_table_template;
+		return $category_accordion_template;
 	}
 
 
@@ -153,7 +153,7 @@ class EES_Espresso_Calendar_Table_Template  extends EES_Shortcode {
 	 * @return    array
 	 */
 	public function template_folder_paths( $template_folder_paths = array() ) {
-		$template_folder_paths[] = EE_CALENDAR_TABLE_TEMPLATE_TEMPLATES;
+		$template_folder_paths[] = EE_CATEGORY_ACCORDION_TEMPLATE_TEMPLATES;
 		return $template_folder_paths;
 	}
 
@@ -161,7 +161,7 @@ class EES_Espresso_Calendar_Table_Template  extends EES_Shortcode {
 
 /**
  *
- * Class EE_Calendar_Table_Template_Query
+ * Class EE_Category_Accordion_Template_Query
  *
  * Description
  *
@@ -171,7 +171,7 @@ class EES_Espresso_Calendar_Table_Template  extends EES_Shortcode {
  * @since 				4.4
  *
  */
-class EE_Calendar_Table_Template_Query extends WP_Query {
+class EE_Category_Accordion_Template_Query extends WP_Query {
 
 	private $_limit = 10;
 	private $_show_expired = FALSE;
@@ -291,5 +291,5 @@ class EE_Calendar_Table_Template_Query extends WP_Query {
 
 }
 
-// End of file EES_Espresso_Calendar_Table_Template.shortcode.php
-// Location: /wp-content/plugins/espresso-new-addon/EES_Espresso_Calendar_Table_Template.shortcode.php
+// End of file EES_Espresso_Category_Accordion_Template.shortcode.php
+// Location: /wp-content/plugins/espresso-new-addon/EES_Espresso_Category_Accordion_Template.shortcode.php

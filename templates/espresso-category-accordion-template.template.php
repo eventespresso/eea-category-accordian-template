@@ -2,7 +2,7 @@
 $temp_month = '';
 if ( have_posts() ) :
 	// allow other stuff
-	do_action( 'AHEE__espresso_calendar_table_template_template__before_loop' );
+	do_action( 'AHEE__espresso_category_accordion_template_template__before_loop' );
 	echo '<table class="cal-table-list">';
 	// Start the Loop.
 	while ( have_posts() ) : the_post();
@@ -19,7 +19,7 @@ if ( have_posts() ) :
 		$registration_url = !empty($external_url) ? $post->EE_Event->external_url() : $post->EE_Event->get_permalink();
 		
 		//Create the registrer now button
-		$live_button 		= '<a id="a_register_link-'.$post->ID.'" href="'.$registration_url.'"><img class="buytix_button" src="'.EE_CALENDAR_TABLE_TEMPLATE_URL . 'images' . DS .'register-now.png" alt="Buy Tickets"></a>';
+		$live_button 		= '<a id="a_register_link-'.$post->ID.'" href="'.$registration_url.'"><img class="buytix_button" src="'.EE_CATEGORY_ACCORDION_TEMPLATE_URL . 'images' . DS .'register-now.png" alt="Buy Tickets"></a>';
 		
 		//Get the venue for this event
 		$venues = espresso_event_venues();
@@ -93,7 +93,7 @@ if ( have_posts() ) :
 	endwhile;
 	echo '</table>';
 	// allow moar other stuff
-	do_action( 'AHEE__espresso_calendar_table_template_template__after_loop' );
+	do_action( 'AHEE__espresso_category_accordion_template_template__after_loop' );
 
 else :
 	// If no content, include the "No posts found" template.

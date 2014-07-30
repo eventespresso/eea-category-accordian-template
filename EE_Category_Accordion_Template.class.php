@@ -2,7 +2,7 @@
 /**
  * ------------------------------------------------------------------------
  *
- * Class  EE_Calendar_Table_Template
+ * Class  EE_Category_Accordion_Template
  *
  * @package			Event Espresso
  * @subpackage		espresso-new-addon
@@ -12,10 +12,10 @@
  * ------------------------------------------------------------------------
  */
 // define the plugin directory path and URL
-		define( 'EE_CALENDAR_TABLE_TEMPLATE_PATH', plugin_dir_path( __FILE__ ));
-		define( 'EE_CALENDAR_TABLE_TEMPLATE_URL', plugin_dir_url( __FILE__ ));
-		define( 'EE_CALENDAR_TABLE_TEMPLATE_TEMPLATES', EE_CALENDAR_TABLE_TEMPLATE_PATH . DS . 'templates' );
-Class  EE_Calendar_Table_Template extends EE_Addon {
+		define( 'EE_CATEGORY_ACCORDION_TEMPLATE_PATH', plugin_dir_path( __FILE__ ));
+		define( 'EE_CATEGORY_ACCORDION_TEMPLATE_URL', plugin_dir_url( __FILE__ ));
+		define( 'EE_CATEGORY_ACCORDION_TEMPLATE_TEMPLATES', EE_CATEGORY_ACCORDION_TEMPLATE_PATH . DS . 'templates' );
+Class  EE_Category_Accordion_Template extends EE_Addon {
 
 	/**
 	 * class constructor
@@ -29,20 +29,20 @@ Class  EE_Calendar_Table_Template extends EE_Addon {
 		
 		// register addon via Plugin API
 		EE_Register_Addon::register(
-			'Calendar_Table_Template',
+			'Category_Accordion_Template',
 			array(
-				'version' 					=> EE_CALENDAR_TABLE_TEMPLATE_VERSION,
+				'version' 					=> EE_CATEGORY_ACCORDION_TEMPLATE_VERSION,
 				'min_core_version' => '4.3.0',
-				'base_path' 				=> EE_CALENDAR_TABLE_TEMPLATE_PATH,
-				'main_file_path' => EE_CALENDAR_TABLE_TEMPLATE_PATH . 'espresso-calendar-table-template.php',
+				'base_path' 				=> EE_CATEGORY_ACCORDION_TEMPLATE_PATH,
+				'main_file_path' => EE_CATEGORY_ACCORDION_TEMPLATE_PATH . 'espresso-calendar-table-template.php',
 				'autoloader_paths' => array(
-					'EE_Calendar_Table_Template' 	=> EE_CALENDAR_TABLE_TEMPLATE_PATH . 'EE_Calendar_Table_Template.class.php',
+					'EE_Category_Accordion_Template' 	=> EE_CATEGORY_ACCORDION_TEMPLATE_PATH . 'EE_Category_Accordion_Template.class.php',
 				),
-				'shortcode_paths' 	=> array( EE_CALENDAR_TABLE_TEMPLATE_PATH . 'EES_Espresso_Calendar_Table_Template.shortcode.php' ),
+				'shortcode_paths' 	=> array( EE_CATEGORY_ACCORDION_TEMPLATE_PATH . 'EES_Espresso_Category_Accordion_Template.shortcode.php' ),
 				//The below is for if plugin update engine is being used for auto-updates. not needed if PUE is not being used.
 				'pue_options'			=> array(
-					'pue_plugin_slug' => 'espresso_calendar_table_template',
-					'plugin_basename' => EE_CALENDAR_TABLE_TEMPLATE_PLUGIN_FILE,
+					'pue_plugin_slug' => 'espresso_category_accordion_template',
+					'plugin_basename' => EE_CATEGORY_ACCORDION_TEMPLATE_PLUGIN_FILE,
 					'checkPeriod' => '24',
 					'use_wp_update' => FALSE
 				)
@@ -75,9 +75,9 @@ Class  EE_Calendar_Table_Template extends EE_Addon {
 	 * @return array
 	 */
 	public function plugin_actions( $links, $file ) {
-		if ( $file == EE_CALENDAR_TABLE_TEMPLATE_PLUGIN_FILE ) {
+		if ( $file == EE_CATEGORY_ACCORDION_TEMPLATE_PLUGIN_FILE ) {
 			// before other links
-			array_unshift( $links, '<a href="admin.php?page=espresso_calendar_table_template">' . __('Settings') . '</a>' );
+			array_unshift( $links, '<a href="admin.php?page=espresso_category_accordion_template">' . __('Settings') . '</a>' );
 		}
 		return $links;
 	}
@@ -88,5 +88,5 @@ Class  EE_Calendar_Table_Template extends EE_Addon {
 
 
 }
-// End of file EE_Calendar_Table_Template.class.php
-// Location: wp-content/plugins/espresso-new-addon/EE_Calendar_Table_Template.class.php
+// End of file EE_Category_Accordion_Template.class.php
+// Location: wp-content/plugins/espresso-new-addon/EE_Category_Accordion_Template.class.php

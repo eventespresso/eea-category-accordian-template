@@ -4,7 +4,7 @@
   Plugin URI: http://www.eventespresso.com
   Description: Will display the categories in bars, once clicked events associated with that category will appear in an "accordion" style. If category colours are turned on, the block to the left will be that colour, otherwise it will default to grey.
   Requirements: (optional) CSS skills to customize styles, some renaming of the table columns
-  Shortcode Example: [ESPRESSO_CALENDAR_TABLE_TEMPLATE]
+  Shortcode Example: [ESPRESSO_CATEGORY_ACCORDION_TEMPLATE]
   Shortcode Parameters: show_featured=1 (shows the featured image), table_header=0 (hides the TH row)
   Version: 0.0.1.dev.001
   Author: Event Espresso
@@ -39,17 +39,17 @@
  *
  * ------------------------------------------------------------------------
  */
-// calendar_table_template version
-define( 'EE_CALENDAR_TABLE_TEMPLATE_VERSION', '0.0.1.dev.001' );
-define( 'EE_CALENDAR_TABLE_TEMPLATE_PLUGIN_FILE', plugin_basename( __FILE__ ));
+// category_accordion_template version
+define( 'EE_CATEGORY_ACCORDION_TEMPLATE_VERSION', '0.0.1.dev.001' );
+define( 'EE_CATEGORY_ACCORDION_TEMPLATE_PLUGIN_FILE', plugin_basename( __FILE__ ));
 
-function load_espresso_calendar_table_template() {
+function load_espresso_category_accordion_template() {
 	if ( class_exists( 'EE_Addon' )) {
-		require_once ( plugin_dir_path( __FILE__ ) . 'EE_Calendar_Table_Template.class.php' );
-		EE_Calendar_Table_Template::register_addon();
+		require_once ( plugin_dir_path( __FILE__ ) . 'EE_Category_Accordion_Template.class.php' );
+		EE_Category_Accordion_Template::register_addon();
 	}
 }
-add_action( 'AHEE__EE_System__load_espresso_addons', 'load_espresso_calendar_table_template' );
+add_action( 'AHEE__EE_System__load_espresso_addons', 'load_espresso_category_accordion_template' );
 
-// End of file espresso_calendar_table_template.php
-// Location: wp-content/plugins/espresso-new-addon/espresso_calendar_table_template.php
+// End of file espresso_category_accordion_template.php
+// Location: wp-content/plugins/espresso-new-addon/espresso_category_accordion_template.php
