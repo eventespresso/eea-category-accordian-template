@@ -6,7 +6,7 @@
   Requirements: (optional) CSS skills to customize styles, some renaming of the table columns
   Shortcode Example: [ESPRESSO_CATEGORY_ACCORDION_TEMPLATE]
   Shortcode Parameters: show_featured=1 (shows the featured image), table_header=0 (hides the TH row)
-  Version: 0.0.1.dev.001
+  Version: 0.0.1.rc.001
   Author: Event Espresso
   Author URI: http://www.eventespresso.com
   Copyright 2014 Event Espresso (email : support@eventespresso.com)
@@ -40,7 +40,7 @@
  * ------------------------------------------------------------------------
  */
 // category_accordion_template version
-define( 'EE_CATEGORY_ACCORDION_TEMPLATE_VERSION', '0.0.1.dev.001' );
+define( 'EE_CATEGORY_ACCORDION_TEMPLATE_VERSION', '0.0.1.rc.001' );
 define( 'EE_CATEGORY_ACCORDION_TEMPLATE_PLUGIN_FILE', plugin_basename( __FILE__ ));
 
 function load_espresso_category_accordion_template() {
