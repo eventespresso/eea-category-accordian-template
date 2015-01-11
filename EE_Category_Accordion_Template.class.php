@@ -26,7 +26,7 @@ Class  EE_Category_Accordion_Template extends EE_Addon {
 	}
 
 	public static function register_addon() {
-		
+
 		// register addon via Plugin API
 		EE_Register_Addon::register(
 			'Category_Accordion_Template',
@@ -41,7 +41,7 @@ Class  EE_Category_Accordion_Template extends EE_Addon {
 				'shortcode_paths' 	=> array( EE_CATEGORY_ACCORDION_TEMPLATE_PATH . 'EES_Espresso_Category_Accordion_Template.shortcode.php' ),
 				//The below is for if plugin update engine is being used for auto-updates. not needed if PUE is not being used.
 				'pue_options'			=> array(
-					'pue_plugin_slug' => 'espresso_category_accordion_template',
+					'pue_plugin_slug' => 'eea-category-accordian-template',
 					'plugin_basename' => EE_CATEGORY_ACCORDION_TEMPLATE_PLUGIN_FILE,
 					'checkPeriod' => '24',
 					'use_wp_update' => FALSE
