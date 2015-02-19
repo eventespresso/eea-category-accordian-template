@@ -11,6 +11,6 @@
 		"src/readme.txt"
 	],
 	"github" : false,
-	"awsbucket" : "",
+	"awsbucket" : "eea-category-accordian-template",
 	"awsregion" : ""
 }
