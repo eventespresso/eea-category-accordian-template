@@ -7,7 +7,7 @@
  * @package			Event Espresso
  * @subpackage		espresso-new-addon
  * @author			    Brent Christensen
- * @ version		 	$VID:$
+ * 
  *
  * ------------------------------------------------------------------------
  */
