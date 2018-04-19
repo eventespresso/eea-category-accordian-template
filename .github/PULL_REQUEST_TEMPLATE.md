@@ -1,4 +1,4 @@
-!-- Thanks for your pull request.  Comments within these type of tags will be hidden and not show up when you submit your pull request -->
+<!-- Thanks for your pull request.  Comments within these type of tags will be hidden and not show up when you submit your pull request -->
 <!-- Please answer the following questions in order to expediate acceptance -->
 
 ## Problem this Pull Request solves
